@@ -24,6 +24,16 @@ A prévia toca em loop, com botão de pausar, barra para arrastar a linha do tem
 
 `frames` e `render` sobem o servidor do Vite sozinhos; não precisa rodar o `dev` antes.
 
+## Commits e releases
+
+O versionamento é automático com [semantic-release](https://semantic-release.gitbook.io/), igual ao GG Setup:
+
+- As mensagens seguem o [Conventional Commits](https://www.conventionalcommits.org/pt-br/) (`feat:`, `fix:`, `refactor:`, `chore:`…). O hook `commit-msg` (husky + commitlint) recusa commits fora do padrão.
+- A cada push em `main` ou `develop`, o workflow `.github/workflows/release.yml` roda o build e o semantic-release.
+- `feat` gera versão minor, `fix` gera patch e `BREAKING CHANGE` gera major. Os outros tipos não geram versão.
+- Em `main` sai a versão estável; em `develop` sai um pre-release (`x.y.z-develop.N`).
+- Cada release atualiza o `CHANGELOG.md`, a versão no `package.json` e cria a tag e a Release no GitHub.
+
 ## Estrutura
 
 ```
