@@ -1,0 +1,47 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  background: var(--color-page);
+}
+
+body {
+  font-family: var(--font);
+  color: var(--color-content);
+  -webkit-font-smoothing: antialiased;
+}
+
+#frame {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Render (render.ts): a página é exatamente o quadro do vídeo. */
+html.render,
+html.render body {
+  width: 1080px;
+  height: 1350px;
+  overflow: hidden;
+}
+
+html.render #frame {
+  width: 1080px;
+  height: 1350px;
+}
+
+/* Prévia (navegador): quadro escalado para caber na janela, com controles embaixo. */
+html.preview body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 16px;
+}

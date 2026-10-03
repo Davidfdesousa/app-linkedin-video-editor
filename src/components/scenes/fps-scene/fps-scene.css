@@ -1,0 +1,110 @@
+gg-fps-scene .panel {
+  padding: 34px 32px 30px;
+}
+
+gg-fps-scene .fps-row {
+  position: relative;
+  padding: 18px 20px 20px;
+  border-radius: var(--radius-md);
+  margin-bottom: 12px;
+  border: 2px solid transparent;
+}
+
+gg-fps-scene .fps-row.selected {
+  border-color: rgba(91, 227, 125, .45);
+  background: var(--color-accent-subtle);
+}
+
+gg-fps-scene .fps-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 14px;
+}
+
+gg-fps-scene .fps-res,
+gg-fps-scene .fps-val {
+  font-size: 30px;
+  font-weight: 800;
+}
+
+gg-fps-scene .fps-res small {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--color-accent);
+  margin-left: 10px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+gg-fps-scene .fps-val small {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--color-content-muted);
+  margin-left: 4px;
+}
+
+gg-fps-scene .tag {
+  font-size: 22px;
+  font-weight: 700;
+  margin-left: 12px;
+}
+
+gg-fps-scene .range {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  border-radius: 11px;
+}
+
+/* Tons das faixas de FPS */
+gg-fps-scene .tone-ok { --tone: var(--color-accent); --tone-from: #2FAE5B; --tone-range: rgba(91, 227, 125, .32); }
+gg-fps-scene .tone-good { --tone: var(--color-lime); --tone-from: #7FB84E; --tone-range: rgba(181, 224, 106, .32); }
+gg-fps-scene .tone-warn { --tone: var(--color-warning); --tone-from: #C98F2A; --tone-range: rgba(245, 185, 74, .32); }
+
+gg-fps-scene .fps-row .bar { background: linear-gradient(90deg, var(--tone-from), var(--tone)); }
+gg-fps-scene .fps-row .range { background: var(--tone-range); }
+gg-fps-scene .fps-row .tag { color: var(--tone); }
+
+gg-fps-scene .summary {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  margin-top: 18px;
+  padding: 22px 6px 0;
+  border-top: 1px solid var(--color-border);
+  font-size: 25px;
+  line-height: 1.4;
+  font-weight: 600;
+}
+
+gg-fps-scene .summary .ok {
+  color: var(--color-accent);
+  font-weight: 800;
+}
+
+gg-fps-scene .callout {
+  position: absolute;
+  left: 64px;
+  right: 64px;
+  top: 1095px;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 22px 26px;
+  border-radius: var(--radius-md);
+  background: var(--color-bg-subtle);
+  border: 1px solid var(--color-border);
+  font-size: 23px;
+  line-height: 1.4;
+  color: var(--color-content-muted);
+}
+
+gg-fps-scene .callout b {
+  color: var(--color-content);
+}
+
+gg-fps-scene .callout svg {
+  flex: none;
+  margin-top: 2px;
+}

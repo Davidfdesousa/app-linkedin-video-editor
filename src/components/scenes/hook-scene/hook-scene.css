@@ -1,0 +1,16 @@
+gg-hook-scene {
+  padding: 0 90px;
+}
+
+gg-hook-scene .hook-eyebrow {
+  font-size: 26px;
+}
+
+gg-hook-scene .hook-line {
+  font-size: 84px;
+}
+
+gg-hook-scene .hook-sub {
+  font-size: 32px;
+  margin-top: 34px;
+}

@@ -1,0 +1,112 @@
+gg-compare-scene .panel {
+  padding: 34px 36px 32px;
+}
+
+gg-compare-scene .price-row {
+  display: grid;
+  grid-template-columns: 210px 1fr 250px;
+  align-items: center;
+  gap: 20px;
+}
+
+gg-compare-scene .price-row + .price-row {
+  margin-top: 18px;
+}
+
+gg-compare-scene .who {
+  font-size: 22px;
+  font-weight: 700;
+  text-align: right;
+}
+
+gg-compare-scene .who.ideal { color: var(--color-accent); }
+gg-compare-scene .who.top { color: var(--color-content-muted); }
+
+gg-compare-scene .track {
+  height: 28px;
+  border-radius: 8px;
+}
+
+gg-compare-scene .bar { border-radius: 8px; }
+gg-compare-scene .bar.ideal { background: var(--color-accent); }
+gg-compare-scene .bar.top { background: var(--color-content-muted); }
+
+gg-compare-scene .amount {
+  font-size: 30px;
+  font-weight: 800;
+  text-align: right;
+}
+
+gg-compare-scene .price-diff {
+  text-align: center;
+  font-size: 28px;
+  color: var(--color-content-muted);
+  margin-top: 18px;
+}
+
+gg-compare-scene .price-diff b { color: var(--color-content); }
+
+gg-compare-scene .price-diff .ideal {
+  color: var(--color-accent);
+  font-weight: 700;
+}
+
+gg-compare-scene .verdict {
+  position: absolute;
+  left: 64px;
+  right: 64px;
+  top: 790px;
+  text-align: center;
+}
+
+gg-compare-scene .delta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 22px;
+}
+
+gg-compare-scene .chip-big {
+  padding: 18px 28px;
+  border-radius: 22px;
+  background: var(--color-bg-subtle);
+  border: 1px solid var(--color-border);
+  font-size: 44px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+gg-compare-scene .chip-big.fps {
+  color: var(--color-accent);
+  border-color: rgba(91, 227, 125, .45);
+  background: var(--color-accent-subtle);
+}
+
+gg-compare-scene .por {
+  font-size: 30px;
+  font-weight: 600;
+  color: var(--color-content-muted);
+}
+
+gg-compare-scene .context {
+  font-size: 30px;
+  line-height: 1.4;
+  color: var(--color-content-muted);
+  margin-top: 26px;
+}
+
+gg-compare-scene .context b { color: var(--color-content); }
+
+gg-compare-scene .context .accent {
+  color: var(--color-accent);
+  font-weight: 700;
+}
+
+gg-compare-scene .question {
+  font-size: 64px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin-top: 34px;
+}
+
+gg-compare-scene .question span { color: var(--color-accent); }

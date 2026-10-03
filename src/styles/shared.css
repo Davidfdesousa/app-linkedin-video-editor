@@ -1,0 +1,136 @@
+/* Peças visuais reaproveitadas por várias cenas. */
+
+.tnum { font-feature-settings: 'tnum' 1; }
+.text-strong { color: var(--color-content); }
+.text-accent { color: var(--color-accent); }
+
+.scene {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.wordmark {
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.wordmark b { color: var(--color-accent); }
+
+/* Título das etapas */
+.step-title {
+  position: absolute;
+  left: 64px;
+  right: 64px;
+  top: 168px;
+}
+
+.eyebrow {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: 14px;
+}
+
+.h1 {
+  font-size: 64px;
+  line-height: 1.05;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.sub {
+  font-size: 28px;
+  line-height: 1.35;
+  color: var(--color-content-muted);
+  margin-top: 16px;
+}
+
+.sub b {
+  color: var(--color-content);
+  font-weight: 700;
+}
+
+/* Painel principal de cada etapa */
+.panel {
+  position: absolute;
+  left: 64px;
+  right: 64px;
+  top: 410px;
+  background: var(--color-bg-subtle);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 36px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, .35);
+}
+
+.panel-label {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--color-content-muted);
+  margin-bottom: 26px;
+}
+
+.footnote {
+  position: absolute;
+  left: 64px;
+  right: 64px;
+  bottom: 34px;
+  font-size: 20px;
+  color: var(--color-content-subtle);
+  text-align: center;
+}
+
+/* Barras (FPS e preço) */
+.track {
+  position: relative;
+  height: 22px;
+  border-radius: 11px;
+  background: var(--color-bg);
+  overflow: hidden;
+}
+
+.bar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  border-radius: 11px;
+}
+
+/* Seleção de cards (jogos e peças) — ver lib/pick.ts */
+.pick-tint,
+.pick-ring {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+}
+
+.pick-tint { background: var(--color-pick); }
+
+.pick-ring {
+  border-radius: inherit;
+  border: 2px solid var(--color-accent);
+}
+
+.pick-check {
+  position: absolute;
+  top: 50%;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--color-accent);
+  transform: scale(0);
+}

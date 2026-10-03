@@ -1,0 +1,22 @@
+gg-intro-scene .intro-mark {
+  width: 150px;
+  height: 150px;
+  border-radius: 40px;
+  background: var(--color-bg-muted);
+  border: 2px solid var(--color-accent);
+  display: grid;
+  place-items: center;
+  margin-bottom: 44px;
+}
+
+gg-intro-scene .intro-word {
+  font-size: 132px;
+}
+
+gg-intro-scene .intro-tag {
+  font-size: 44px;
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--color-content-muted);
+  margin-top: 26px;
+}

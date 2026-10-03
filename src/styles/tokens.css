@@ -1,0 +1,23 @@
+:root {
+  --color-bg: #0F1924;
+  --color-bg-subtle: #16212E;
+  --color-bg-muted: #1B2838;
+  --color-bg-strong: #22334A;
+  --color-border: #2A3D55;
+  --color-content: #E8EEF4;
+  --color-content-muted: #8EA3B8;
+  --color-content-subtle: #5F7489;
+  --color-accent: #5BE37D;
+  --color-accent-muted: rgba(91, 227, 125, 0.14);
+  --color-accent-subtle: rgba(91, 227, 125, 0.07);
+  --color-pick: #1D3326;
+  --color-lime: #B5E06A;
+  --color-warning: #F5B94A;
+  --color-on-accent: #0B1A10;
+  --color-page: #05090D;
+
+  --radius-md: 18px;
+  --radius-lg: 28px;
+
+  --font: 'Inter', 'Inter Display', system-ui, sans-serif;
+}

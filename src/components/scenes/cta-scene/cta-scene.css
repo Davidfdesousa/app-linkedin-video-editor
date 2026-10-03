@@ -1,0 +1,45 @@
+gg-cta-scene .cta-word {
+  font-size: 96px;
+  margin-bottom: 30px;
+}
+
+gg-cta-scene .url {
+  font-size: 76px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+gg-cta-scene .url b {
+  color: var(--color-accent);
+}
+
+gg-cta-scene .pills {
+  display: flex;
+  gap: 14px;
+  margin-top: 40px;
+  justify-content: center;
+}
+
+gg-cta-scene .pill {
+  font-size: 24px;
+  font-weight: 600;
+  padding: 14px 24px;
+  border-radius: 30px;
+  background: var(--color-bg-subtle);
+  border: 1px solid var(--color-border);
+  color: var(--color-content-muted);
+}
+
+gg-cta-scene .cta-btn {
+  margin-top: 56px;
+  height: 96px;
+  padding: 0 56px;
+  border-radius: 48px;
+  background: var(--color-accent);
+  color: var(--color-on-accent);
+  font-size: 34px;
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+}

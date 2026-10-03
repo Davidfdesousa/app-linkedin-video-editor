@@ -1,0 +1,134 @@
+gg-parts-scene .panel {
+  top: 372px;
+  padding: 22px 24px 20px;
+}
+
+gg-parts-scene .part {
+  margin-bottom: 14px;
+}
+
+gg-parts-scene .part-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 4px 8px;
+}
+
+gg-parts-scene .part-head svg {
+  flex: none;
+}
+
+gg-parts-scene .cat {
+  font-size: 17px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: var(--color-content-muted);
+}
+
+gg-parts-scene .opts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+gg-parts-scene .opt {
+  position: relative;
+  height: 84px;
+  border-radius: 16px;
+  background: var(--color-bg-muted);
+  padding: 0 62px 0 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+}
+
+gg-parts-scene .model {
+  position: relative;
+  font-size: 21px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+gg-parts-scene .meta {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 6px;
+  font-size: 17px;
+  color: var(--color-content-muted);
+  white-space: nowrap;
+}
+
+gg-parts-scene .price {
+  font-size: 19px;
+  font-weight: 800;
+  color: var(--color-accent);
+}
+
+gg-parts-scene .badge {
+  font-size: 14px;
+  font-weight: 700;
+  padding: 3px 9px;
+  border-radius: 7px;
+  border: 1px solid rgba(181, 224, 106, .5);
+  color: var(--color-lime);
+}
+
+gg-parts-scene .badge.rec {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-on-accent);
+}
+
+gg-parts-scene .box {
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  width: 30px;
+  height: 30px;
+  margin-top: -15px;
+  border-radius: 15px;
+  border: 2px solid var(--color-border);
+}
+
+gg-parts-scene .pick-check {
+  right: 16px;
+  width: 34px;
+  height: 34px;
+  margin-top: -17px;
+}
+
+gg-parts-scene .total {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: 8px;
+  padding: 14px 6px 0;
+  border-top: 1px solid var(--color-border);
+}
+
+gg-parts-scene .label {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--color-content-muted);
+}
+
+gg-parts-scene .count {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-accent);
+  margin-top: 6px;
+}
+
+gg-parts-scene .value {
+  font-size: 46px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--color-accent);
+}

@@ -3,14 +3,18 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "serve": "vite preview",
+    "frames": "tsx render.ts preview",
     "render": "tsx render.ts",
-    "preview": "tsx render.ts preview",
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
     "@types/node": "^22.20.5",
     "playwright": "^1.56.0",
     "tsx": "^4.23.15",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "vite": "^8.3.2"
   }
 }
