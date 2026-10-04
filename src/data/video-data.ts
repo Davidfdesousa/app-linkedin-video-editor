@@ -81,7 +81,7 @@ export const VIDEO_DATA: VideoData = {
     game: 'SILENT HILL f',
     idealFps: [70, 89],
     // Faixa de FPS da config "Tudo que dá" (Core Ultra 9 285K + RTX 5080) no jogo mais pesado, em 1440p.
-    // A conta usa o máximo do ideal contra o mínimo do "Tudo que dá".
+    // A conta compara a média de cada faixa: (70+89)/2 ≈ 80 contra (91+116)/2 ≈ 104.
     topFps: [91, 116],
     note: 'Preços lidos no GG Setup em 23/07/2026 · KaBuM! e Pichau',
   },

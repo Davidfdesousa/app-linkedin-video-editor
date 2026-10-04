@@ -61,8 +61,8 @@ Cada cena estende `SceneElement`: monta o HTML uma vez em `template()` e desenha
 
 - **Conteúdo:** tudo fica em `src/data/video-data.ts`.
 - **Duração das cenas:** `timeline` no mesmo arquivo.
-- **Peças (etapa 2):** cada peça tem `options` (2 ou mais) e `pick`, o índice da opção marcada. A opção com `rec: true` ganha o selo "Recomendada"; `tag` dá um selo às outras.
-- **Comparação final em FPS:** `compare.topFps` guarda a faixa da config "Tudo que dá" no jogo mais pesado (hoje `[91, 116]` no SILENT HILL f em 1440p). O vídeo mostra "+R$ X por +Y FPS", usando o máximo do ideal contra o mínimo do "Tudo que dá". Com `null`, mostra só a diferença de preço.
+- **Peças (etapa 2):** cada peça tem `options` (2 ou mais) e `pick`, o índice da opção marcada. A opção com `rec: true` ganha o selo "Recomendada"; `tag` dá um selo às outras. No painel, a 1ª opção fica na coluna "Peças recomendadas" e as outras em "Outras peças equivalentes" (títulos em `COLUMNS`, no `parts-scene.ts`).
+- **Comparação final em FPS:** `compare.topFps` guarda a faixa da config "Tudo que dá" no jogo mais pesado (hoje `[91, 116]` no SILENT HILL f em 1440p). O vídeo mostra "+R$ X por +Y FPS", comparando a média da faixa do ideal com a média da faixa do "Tudo que dá" (hoje 80 contra 104 FPS). Com `null`, mostra só a diferença de preço.
 - **Faixas de FPS:** em `fpsByResolution`, `tone` pode ser `ok` (Roda liso), `good` (Roda bem) ou `warn` (Jogável).
 - **Logo:** troque o SVG `LOGO` em `src/lib/icons.ts`, hoje um placeholder.
 - **Cores:** tokens em `src/styles/tokens.css`.

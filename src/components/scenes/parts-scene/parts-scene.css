@@ -1,10 +1,30 @@
 gg-parts-scene .panel {
-  top: 372px;
+  top: 362px;
   padding: 22px 24px 20px;
 }
 
+gg-parts-scene .cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 0 4px 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+gg-parts-scene .col {
+  font-size: 19px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: var(--color-content-muted);
+}
+
+gg-parts-scene .col.rec {
+  color: var(--color-accent);
+}
+
 gg-parts-scene .part {
-  margin-bottom: 14px;
+  margin-bottom: 10px;
 }
 
 gg-parts-scene .part-head {

@@ -1,7 +1,11 @@
 import { back, easeInOut, easeOut, enter, enterSoft, seg } from '../../../lib/anim';
 import { brlCents, brlInt } from '../../../lib/format';
+import type { FpsRange } from '../../../types';
 import { SceneElement } from '../../scene-element/scene-element';
 import './compare-scene.css';
+
+/** Média da faixa, arredondada: a diferença exibida bate com os dois números exibidos. */
+const fpsAverage = ([lo, hi]: FpsRange): number => Math.round((lo + hi) / 2);
 
 /** Comparação "Ideal pra você" × "Tudo que dá": diferença de preço e de FPS. */
 export class CompareScene extends SceneElement {
@@ -41,19 +45,19 @@ export class CompareScene extends SceneElement {
       <div class="footnote">${c.note}</div>`;
   }
 
-  /** Com `topFps`: "+R$ X por +Y FPS". Sem: só a diferença de preço. */
+  /** Com `topFps`: "+R$ X por +Y FPS", comparando a média de cada faixa. Sem: só a diferença de preço. */
   private verdict(diff: number): string {
     const c = this.data.compare;
     if (!c.topFps) {
       return `<div class="delta"><div class="chip-big tnum">+${brlInt(diff)}</div></div>
         <div class="context">a mais no "${c.topLabel}" — e o <span class="accent">${c.idealLabel.toLowerCase()}</span><br>já roda todos os seus jogos acima de 60 FPS.</div>`;
     }
-    const idealMax = c.idealFps[1];
-    const topMin = c.topFps[0];
+    const idealAvg = fpsAverage(c.idealFps);
+    const topAvg = fpsAverage(c.topFps);
     return `<div class="delta">
-        <div class="chip-big tnum">+${brlInt(diff)}</div><div class="por">por</div><div class="chip-big fps tnum">+${topMin - idealMax} FPS</div>
+        <div class="chip-big tnum">+${brlInt(diff)}</div><div class="por">por</div><div class="chip-big fps tnum">+${topAvg - idealAvg} FPS</div>
       </div>
-      <div class="context">no <b>${c.game}</b>, o seu jogo mais pesado:<br>de <b>${idealMax}</b> (máx. do ideal) para <b>${topMin}</b> (mín. do "${c.topLabel}").</div>`;
+      <div class="context">no <b>${c.game}</b>, o seu jogo mais pesado:<br>média de <b>${idealAvg}</b> FPS no ideal contra <b>${topAvg}</b> no "${c.topLabel}".</div>`;
   }
 
   protected override mount(): void {

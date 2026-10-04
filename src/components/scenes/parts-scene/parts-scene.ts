@@ -10,10 +10,13 @@ const ROW_START = 2.4;
 const ROW_GAP = 1.6;
 /** Tempo entre a linha aparecer e a opção ser marcada. */
 const PICK_DELAY = 1.0;
+/** Títulos das colunas: a 1ª opção de cada peça é a recomendada, as outras são equivalentes. */
+const COLUMNS = ['Peças recomendadas', 'Outras peças equivalentes'];
 
 /** Etapa 2: o usuário escolhe uma opção de cada peça; o total vai somando. */
 export class PartsScene extends SceneElement {
   private panel!: HTMLElement;
+  private cols!: HTMLElement;
   private rows: HTMLElement[] = [];
   private total!: HTMLElement;
   private totalValue!: HTMLElement;
@@ -30,6 +33,7 @@ export class PartsScene extends SceneElement {
 
     return `${this.stepTitle('Etapa 2', 'Escolha as 6 peças', 'A recomendada vem na medida do jogo. <b>A escolha é sua.</b>')}
       <div class="panel">
+        <div class="cols"><span class="col rec">${COLUMNS[0]}</span><span class="col">${COLUMNS[1]}</span></div>
         ${rows}
         <div class="total">
           <div>
@@ -55,6 +59,7 @@ export class PartsScene extends SceneElement {
 
   protected override mount(): void {
     this.panel = this.el('.panel');
+    this.cols = this.el('.cols');
     this.rows = this.all('.part');
     this.total = this.el('.total');
     this.totalValue = this.el('.total .value');
@@ -65,6 +70,7 @@ export class PartsScene extends SceneElement {
   protected draw(lt: number): void {
     this.drawStepTitle(lt);
     enterSoft(this.panel, seg(lt, 0.8, 1.8), 40);
+    enterSoft(this.cols, seg(lt, ROW_START - 0.5, ROW_START + 0.3), 10);
     enterSoft(this.total, seg(lt, ROW_START + 0.2, ROW_START + 1.0), 10);
 
     let sum = 0;
