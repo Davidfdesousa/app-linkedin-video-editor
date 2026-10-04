@@ -3,6 +3,9 @@ name: Release
 on:
   push:
     branches: [main, develop]
+  # Disparo manual: o commit de release do develop tem [skip ci], então um
+  # fast-forward de develop em main não roda o workflow sozinho.
+  workflow_dispatch:
 
 permissions:
   contents: write
