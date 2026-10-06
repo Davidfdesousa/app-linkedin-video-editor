@@ -2,7 +2,7 @@
  * VIDEO_DATA — edite aqui textos, jogos, peças, preços e FPS.
  * Os componentes só leem estes dados.
  *
- * Fonte: ggsetup.com.br, preços lidos em 23/07/2026 (Cyberpunk 2077, ELDEN RING,
+ * Fonte: ggsetup.com.br, preços lidos em 06/10/2026 (Cyberpunk 2077, ELDEN RING,
  * The Last of Us Part II e SILENT HILL f).
  */
 import type { VideoData } from '../types';
@@ -57,7 +57,7 @@ export const VIDEO_DATA: VideoData = {
       { model: 'Kingston NV3 1 TB PCIe 4',    store: 'KaBuM!', price: 1044.05, tag: 'Custo-benefício' },
     ] },
   ],
-  pricesNote: 'Preços lidos no GG Setup em 23/07/2026 · mudam ao longo do dia',
+  pricesNote: 'Preços lidos no GG Setup em 06/10/2026 · mudam ao longo do dia',
 
   // Etapa 3 — FPS do jogo mais pesado, por resolução (valores do site).
   // tone: 'ok' = Roda liso, 'good' = Roda bem, 'warn' = Jogável.
@@ -83,7 +83,7 @@ export const VIDEO_DATA: VideoData = {
     // Faixa de FPS da config "Tudo que dá" (Core Ultra 9 285K + RTX 5080) no jogo mais pesado, em 1440p.
     // A conta compara a média de cada faixa: (70+89)/2 ≈ 80 contra (91+116)/2 ≈ 104.
     topFps: [91, 116],
-    note: 'Preços lidos no GG Setup em 23/07/2026 · KaBuM! e Pichau',
+    note: 'Preços lidos no GG Setup em 06/10/2026 · KaBuM! e Pichau',
   },
 
   cta: {
