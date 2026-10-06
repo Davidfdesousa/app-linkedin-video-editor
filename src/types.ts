@@ -65,6 +65,8 @@ export interface VideoData {
   games: Game[];
   searchQuery: string;
   resolution: string;
+  /** Linha de fonte da etapa 1 (de onde vêm os jogos e os requisitos). */
+  gamesNote: string;
   parts: Part[];
   pricesNote: string;
   heaviestGame: string;

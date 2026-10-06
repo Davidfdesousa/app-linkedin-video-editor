@@ -1,5 +1,5 @@
-import { easeOut, easeSoft, enter, seg } from '../../../lib/anim';
-import { SEARCH } from '../../../lib/icons';
+import { easeOut, easeSoft, enter, enterSoft, seg } from '../../../lib/anim';
+import { DATABASE, SEARCH } from '../../../lib/icons';
 import { PICK_CHECK, PICK_LAYERS, drawPick } from '../../../lib/pick';
 import { SceneElement } from '../../scene-element/scene-element';
 import './games-scene.css';
@@ -11,6 +11,10 @@ const TYPE_END = 6.3;
 const SEARCH_CLOSE = 6.9;
 const RESOLUTION_SWITCH = 7.6;
 const HEAVY_LABEL = 8.4;
+/** Entre as marcações e a busca: a fonte dos dados aparece num respiro da cena. */
+const NOTE_IN = 3.8;
+/** Metade da troca de casas quando o jogo da busca entra na grade. */
+const SWAP_HALF = 0.2;
 
 /** Etapa 1: escolha dos jogos, com busca e resolução da tela. */
 export class GamesScene extends SceneElement {
@@ -22,11 +26,12 @@ export class GamesScene extends SceneElement {
   private count!: HTMLElement;
   private chipDefault!: HTMLElement;
   private chipTarget!: HTMLElement;
+  private note!: HTMLElement;
 
   protected template(): string {
-    const { games, resolution } = this.data;
+    const { games, resolution, gamesNote } = this.data;
     const cards = games.map((g) => `
-      <div class="game">
+      <div class="game${g.fromSearch ? ' from-search' : ''}">
         ${PICK_LAYERS}
         <div class="swatch" style="background:${g.color}"></div>
         <div class="name">${g.name}</div>
@@ -37,7 +42,7 @@ export class GamesScene extends SceneElement {
     return `${this.stepTitle('Etapa 1', 'O que você quer jogar?', 'Escolha até 5. <b>O mais pesado define a máquina.</b>')}
       <div class="panel">
         <div class="search">
-          ${SEARCH}<span class="search-text"></span><span class="caret"></span><span class="placeholder">Buscar jogo…</span>
+          ${SEARCH}<span class="search-text"></span><span class="caret"></span><span class="placeholder">Buscar qualquer jogo da Steam…</span>
         </div>
         <div class="games">${cards}</div>
         <div class="games-footer">
@@ -48,7 +53,8 @@ export class GamesScene extends SceneElement {
             <div class="chip">4K</div>
           </div>
         </div>
-      </div>`;
+      </div>
+      <div class="callout">${DATABASE}<div>${gamesNote}</div></div>`;
   }
 
   protected override mount(): void {
@@ -60,6 +66,7 @@ export class GamesScene extends SceneElement {
     this.count = this.el('.game-count');
     this.chipDefault = this.el('.chip-default');
     this.chipTarget = this.el('.chip-target');
+    this.note = this.el('.callout');
   }
 
   protected draw(lt: number): void {
@@ -67,11 +74,24 @@ export class GamesScene extends SceneElement {
     enter(this.panel, seg(lt, 0.6, 1.4), 60);
     this.drawSearch(lt);
 
+    // O jogo achado na busca entra na casa dele e os seguintes andam uma casa:
+    // somem, trocam de lugar invisíveis e reaparecem (sem cruzar a grade na diagonal).
+    const searchIdx = this.data.games.findIndex((g) => g.fromSearch);
+    const moved = lt >= TYPE_END + SWAP_HALF;
+    const swapAlpha = moved
+      ? easeOut(seg(lt, TYPE_END + SWAP_HALF, TYPE_END + 2 * SWAP_HALF))
+      : 1 - easeOut(seg(lt, TYPE_END, TYPE_END + SWAP_HALF));
+
     let picked = 0;
     this.data.games.forEach((game, i) => {
       const card = this.cards[i];
-      if (game.fromSearch) {
-        const p = easeOut(seg(lt, TYPE_END, TYPE_END + 0.4));
+      const pushed = searchIdx >= 0 && i > searchIdx;
+      place(card, pushed && !moved ? i - 1 : i);
+      if (pushed) {
+        enter(card, seg(lt, 1.0 + (i - 1) * 0.1, 1.6 + (i - 1) * 0.1), 20);
+        card.style.opacity = String(Number(card.style.opacity) * swapAlpha);
+      } else if (game.fromSearch) {
+        const p = easeOut(seg(lt, TYPE_END + 0.15, TYPE_END + 0.55));
         card.style.opacity = String(p);
         card.style.transform = `scale(${0.94 + 0.06 * p})`;
       } else {
@@ -87,6 +107,7 @@ export class GamesScene extends SceneElement {
     const switched = lt >= RESOLUTION_SWITCH;
     this.chipDefault.classList.toggle('on', !switched);
     this.chipTarget.classList.toggle('on', switched);
+    enterSoft(this.note, seg(lt, NOTE_IN, NOTE_IN + 0.8), 20);
   }
 
   private drawSearch(lt: number): void {
@@ -97,6 +118,12 @@ export class GamesScene extends SceneElement {
     this.placeholder.style.display = searching && typed.length ? 'none' : 'inline';
     this.caret.style.opacity = String(searching ? (Math.floor(lt * 2.5) % 2 ? 1 : 0.2) : 0);
   }
+}
+
+/** Põe o card na casa `slot` da grade de 2 colunas. */
+function place(card: HTMLElement, slot: number): void {
+  card.style.setProperty('--col', String(slot % 2));
+  card.style.setProperty('--row', String(Math.floor(slot / 2)));
 }
 
 customElements.define('gg-games-scene', GamesScene);

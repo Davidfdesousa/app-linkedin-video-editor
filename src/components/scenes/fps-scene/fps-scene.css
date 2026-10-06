@@ -85,27 +85,5 @@ gg-fps-scene .summary .ok {
 }
 
 gg-fps-scene .callout {
-  position: absolute;
-  left: 64px;
-  right: 64px;
   top: 1095px;
-  display: flex;
-  gap: 16px;
-  align-items: flex-start;
-  padding: 22px 26px;
-  border-radius: var(--radius);
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  font-size: 23px;
-  line-height: 1.4;
-  color: var(--color-content-mist);
-}
-
-gg-fps-scene .callout b {
-  color: var(--color-content);
-}
-
-gg-fps-scene .callout svg {
-  flex: none;
-  margin-top: 2px;
 }

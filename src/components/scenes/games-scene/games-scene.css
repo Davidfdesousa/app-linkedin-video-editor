@@ -28,16 +28,28 @@ gg-games-scene .caret {
   margin-left: 2px;
 }
 
+/* Vitrine com 3 linhas e meia, como a grade de jogos do app: a fatia da
+   4ª linha, apagando, avisa que a lista continua. Cortar no fim de uma linha
+   faz a caixa parecer o catálogo inteiro. */
 gg-games-scene .games {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
+  --card-h: 128px;
+  --gap: 16px;
+  position: relative;
+  height: calc(3.5 * var(--card-h) + 3 * var(--gap));
   margin-top: 26px;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to bottom, #000 calc(100% - var(--card-h) / 2), transparent);
+  mask-image: linear-gradient(to bottom, #000 calc(100% - var(--card-h) / 2), transparent);
 }
 
+/* Posição por casa da grade de 2 colunas: --col e --row vêm do draw() e
+   podem ser fracionários enquanto o card desliza de uma casa pra outra. */
 gg-games-scene .game {
-  position: relative;
-  height: 128px;
+  position: absolute;
+  left: calc(var(--col, 0) * (50% + var(--gap) / 2));
+  top: calc(var(--row, 0) * (var(--card-h) + var(--gap)));
+  width: calc(50% - var(--gap) / 2);
+  height: var(--card-h);
   border-radius: var(--radius);
   background: var(--color-bg-muted);
   border: 1px solid var(--color-border);
@@ -46,6 +58,11 @@ gg-games-scene .game {
   flex-direction: column;
   justify-content: center;
   overflow: hidden;
+}
+
+/* O jogo da busca entra por cima do card que ele empurra. */
+gg-games-scene .game.from-search {
+  z-index: 1;
 }
 
 gg-games-scene .swatch {
@@ -123,4 +140,8 @@ gg-games-scene .chip.on {
   background: var(--color-utility-bg);
   border-color: var(--color-utility-border);
   color: var(--color-utility);
+}
+
+gg-games-scene .callout {
+  top: 1192px;
 }

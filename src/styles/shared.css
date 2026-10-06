@@ -92,6 +92,32 @@
   text-align: center;
 }
 
+/* Nota com ícone abaixo do painel (fonte dos dados, comparação de peça) */
+.callout {
+  position: absolute;
+  left: 64px;
+  right: 64px;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 22px 26px;
+  border-radius: var(--radius);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  font-size: 23px;
+  line-height: 1.4;
+  color: var(--color-content-mist);
+}
+
+.callout b {
+  color: var(--color-content);
+}
+
+.callout svg {
+  flex: none;
+  margin-top: 2px;
+}
+
 /* Barras (FPS e preço) */
 .track {
   position: relative;

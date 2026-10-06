@@ -18,6 +18,9 @@ export const VIDEO_DATA: VideoData = {
   },
 
   // Etapa 1 — `pickAt` = segundo (dentro da cena) em que o jogo é marcado; null = não selecionado.
+  // A grade mostra 3 linhas e meia: os jogos depois do SILENT HILL f ficam na
+  // linha cortada, só pra deixar claro que a lista continua.
+  // Ranks dos jogos extras: games.json do GG Setup de 03/10/2026.
   games: [
     { name: 'Cyberpunk 2077',         meta: '#48 mais jogado na Steam', color: '#F2E14C', pickAt: 2.2 },
     { name: 'ELDEN RING',             meta: '#54 mais jogado na Steam', color: '#C9A85C', pickAt: 2.8 },
@@ -25,9 +28,13 @@ export const VIDEO_DATA: VideoData = {
     { name: 'Counter-Strike 2',       meta: 'FPS competitivo',          color: '#F5B94A', pickAt: null },
     { name: 'Apex Legends',           meta: 'Battle royale',            color: '#E2735B', pickAt: null },
     { name: 'SILENT HILL f',          meta: 'Lançamento 2025',          color: '#C8323C', pickAt: 6.8, fromSearch: true, heaviest: true },
+    { name: 'Marvel Rivals',          meta: '#17 mais jogado na Steam', color: '#5C7FB8', pickAt: null },
+    { name: "Baldur's Gate 3",        meta: '#44 mais jogado na Steam', color: '#B08D57', pickAt: null },
+    { name: 'PUBG: BATTLEGROUNDS',    meta: '#3 mais jogado na Steam',  color: '#D9A441', pickAt: null },
   ],
   searchQuery: 'SILENT HILL f',
   resolution: '1440p',
+  gamesNote: 'Consultamos jogos e requisitos recomendados na <b>API oficial da Steam</b>.',
 
   // Etapa 2 — ordem igual à do site. Cada peça mostra 2+ opções reais do site;
   // `rec` = recomendada (ganha o selo), `pick` = índice da opção que o usuário marca.
@@ -83,11 +90,11 @@ export const VIDEO_DATA: VideoData = {
     // Faixa de FPS da config "Tudo que dá" (Core Ultra 9 285K + RTX 5080) no jogo mais pesado, em 1440p.
     // A conta compara a média de cada faixa: (70+89)/2 ≈ 80 contra (91+116)/2 ≈ 104.
     topFps: [91, 116],
-    note: 'Preços lidos no GG Setup em 06/10/2026 · KaBuM! e Pichau',
+    note: 'Preços lidos no GG Setup em 06/10/2026',
   },
 
   cta: {
-    pills: ['Grátis', 'Sem cadastro', 'KaBuM! × Pichau'],
+    pills: ['Grátis', 'Sem cadastro', 'Fácil de usar'],
     button: 'Monte o seu',
   },
 
