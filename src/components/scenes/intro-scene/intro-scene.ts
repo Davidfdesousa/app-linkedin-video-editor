@@ -1,9 +1,9 @@
 import { back, enter, seg } from '../../../lib/anim';
-import { LOGO } from '../../../lib/icons';
+import { CIRCUIT_LOGO, drawCircuit } from '../../../lib/circuit-logo';
 import { SceneElement } from '../../scene-element/scene-element';
 import './intro-scene.css';
 
-/** Abertura: logo, wordmark e slogan. */
+/** Abertura: logo com o circuito animado, wordmark e slogan. */
 export class IntroScene extends SceneElement {
   protected override centered = true;
   private mark!: HTMLElement;
@@ -11,7 +11,7 @@ export class IntroScene extends SceneElement {
   private tag!: HTMLElement;
 
   protected template(): string {
-    return `<div class="intro-mark">${LOGO}</div>
+    return `<div class="intro-mark">${CIRCUIT_LOGO}</div>
       <div class="wordmark intro-word"><b>GG</b> Setup</div>
       <div class="intro-tag">${this.data.intro.tagline}</div>`;
   }
@@ -25,6 +25,7 @@ export class IntroScene extends SceneElement {
   protected draw(lt: number): void {
     this.mark.style.transform = `scale(${0.4 + 0.6 * back(seg(lt, 0.1, 0.9))})`;
     this.mark.style.opacity = String(seg(lt, 0.1, 0.45));
+    drawCircuit(this.mark, lt);
     enter(this.word, seg(lt, 0.5, 1.3), 50);
     enter(this.tag, seg(lt, 1.1, 1.9), 40);
   }

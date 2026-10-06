@@ -1,12 +1,18 @@
+/* Logo do loading do app, com o dobro dos 150px que o ícone ocupava. */
 gg-intro-scene .intro-mark {
-  width: 150px;
-  height: 150px;
-  border-radius: var(--radius);
-  background: var(--color-surface);
-  border: 1px solid var(--color-border-strong);
-  display: grid;
-  place-items: center;
+  width: 300px;
   margin-bottom: 44px;
+}
+
+gg-intro-scene .intro-mark svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+gg-intro-scene .circuit-dim,
+gg-intro-scene .circuit-lit {
+  fill: var(--color-logo);
 }
 
 gg-intro-scene .intro-word {

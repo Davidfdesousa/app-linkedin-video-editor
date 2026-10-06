@@ -26,10 +26,3 @@ export const DATABASE =
 
 export const ARROW =
   '<svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#0F1924" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
-
-/** Placeholder do logo: troque pelo SVG oficial. */
-export const LOGO =
-  '<svg width="92" height="92" viewBox="0 0 24 24" fill="none" stroke="#4CF592" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">' +
-  '<path d="M6 9h12a4 4 0 0 1 3.9 4.9l-.8 3.4a2.4 2.4 0 0 1-4.2.9L15 16H9l-1.9 2.2a2.4 2.4 0 0 1-4.2-.9l-.8-3.4A4 4 0 0 1 6 9z"/>' +
-  '<path d="M7.5 12v2.5M6.25 13.25h2.5"/><circle cx="16" cy="12.4" r=".6" fill="#4CF592"/><circle cx="17.6" cy="14" r=".6" fill="#4CF592"/>' +
-  '<path d="M12 9V5.5h3"/><circle cx="16" cy="5.5" r="1"/></svg>';
