@@ -10,7 +10,7 @@
     "build": "tsc --noEmit && vite build",
     "serve": "vite preview",
     "frames": "tsx render.ts preview",
-    "render": "tsx render.ts",
+    "render": "rm -rf out && tsx render.ts",
     "typecheck": "tsc --noEmit",
     "prepare": "husky"
   },
