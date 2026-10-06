@@ -10,7 +10,7 @@ gg-cta-scene .url {
 }
 
 gg-cta-scene .url b {
-  color: var(--color-accent);
+  color: var(--color-content-muted);
 }
 
 gg-cta-scene .pills {
@@ -24,19 +24,20 @@ gg-cta-scene .pill {
   font-size: 24px;
   font-weight: 600;
   padding: 14px 24px;
-  border-radius: 30px;
-  background: var(--color-bg-subtle);
+  border-radius: var(--radius);
+  background: var(--color-bg-muted);
   border: 1px solid var(--color-border);
-  color: var(--color-content-muted);
+  color: var(--color-content-mist);
 }
 
 gg-cta-scene .cta-btn {
   margin-top: 56px;
   height: 96px;
   padding: 0 56px;
-  border-radius: 48px;
+  border-radius: var(--radius);
   background: var(--color-accent);
   color: var(--color-on-accent);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, .24);
   font-size: 34px;
   font-weight: 800;
   display: inline-flex;

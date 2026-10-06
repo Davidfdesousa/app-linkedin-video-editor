@@ -1,8 +1,8 @@
 gg-games-scene .search {
   height: 76px;
-  border-radius: 38px;
+  border-radius: var(--radius);
   background: var(--color-bg);
-  border: 1px solid var(--color-border);
+  border: 1px solid var(--color-border-strong);
   display: flex;
   align-items: center;
   padding: 0 28px;
@@ -23,7 +23,7 @@ gg-games-scene .caret {
   display: inline-block;
   width: 3px;
   height: 30px;
-  background: var(--color-accent);
+  background: var(--color-utility);
   vertical-align: middle;
   margin-left: 2px;
 }
@@ -38,8 +38,9 @@ gg-games-scene .games {
 gg-games-scene .game {
   position: relative;
   height: 128px;
-  border-radius: var(--radius-md);
+  border-radius: var(--radius);
   background: var(--color-bg-muted);
+  border: 1px solid var(--color-border);
   padding: 20px 70px 20px 24px;
   display: flex;
   flex-direction: column;
@@ -97,7 +98,7 @@ gg-games-scene .counter {
 }
 
 gg-games-scene .counter span {
-  color: var(--color-accent);
+  color: var(--color-utility);
 }
 
 gg-games-scene .chips {
@@ -108,18 +109,18 @@ gg-games-scene .chips {
 gg-games-scene .chip {
   height: 52px;
   padding: 0 22px;
-  border-radius: 26px;
+  border-radius: var(--radius);
   display: grid;
   place-items: center;
   font-size: 22px;
-  font-weight: 600;
-  background: var(--color-bg);
+  font-weight: 700;
   border: 1px solid var(--color-border);
   color: var(--color-content-muted);
 }
 
+/* Igual ao seletor de resolução do app: marcado em azul-aço, sem preenchimento cheio. */
 gg-games-scene .chip.on {
-  background: var(--color-accent);
-  color: var(--color-on-accent);
-  border-color: var(--color-accent);
+  background: var(--color-utility-bg);
+  border-color: var(--color-utility-border);
+  color: var(--color-utility);
 }

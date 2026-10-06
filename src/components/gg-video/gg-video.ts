@@ -33,7 +33,7 @@ export class GgVideo extends HTMLElement {
   load(data: VideoData): void {
     const { spans, duration } = buildTimeline(data.timeline);
     this.duration = duration;
-    this.innerHTML = '<div class="grid-bg"></div>';
+    this.innerHTML = '';
 
     this.header = new GgHeader();
     this.header.setup(spans);

@@ -18,38 +18,50 @@ gg-header .steps {
   gap: 10px;
 }
 
+/* Mesmos três estados do passo a passo do app: atual em azul-aço,
+   concluído em verde, futuro neutro. */
 gg-header .step-pill {
   height: 44px;
-  padding: 0 18px;
-  border-radius: 22px;
+  padding: 0 16px 0 10px;
+  border-radius: var(--radius);
   display: flex;
   align-items: center;
   gap: 10px;
   font-size: 20px;
   font-weight: 600;
-  color: var(--color-content-subtle);
-  background: var(--color-bg-subtle);
+  color: var(--color-content-muted);
   border: 1px solid var(--color-border);
 }
 
 gg-header .num {
   width: 26px;
   height: 26px;
-  border-radius: 13px;
+  border-radius: var(--radius);
   display: grid;
   place-items: center;
   font-size: 15px;
-  background: var(--color-bg-strong);
+  font-weight: 700;
+  background: var(--color-bg-muted);
   color: var(--color-content-muted);
 }
 
 gg-header .step-pill.active {
-  color: var(--color-content);
-  border-color: var(--color-accent);
-  background: var(--color-accent-muted);
+  color: var(--color-utility);
+  border-color: var(--color-utility-border);
+  background: var(--color-utility-bg);
 }
 
-gg-header .active .num,
+gg-header .step-pill.done {
+  color: var(--color-accent);
+  border-color: var(--color-accent-border);
+  background: var(--color-accent-bg);
+}
+
+gg-header .active .num {
+  background: var(--color-utility);
+  color: var(--color-on-accent);
+}
+
 gg-header .done .num {
   background: var(--color-accent);
   color: var(--color-on-accent);

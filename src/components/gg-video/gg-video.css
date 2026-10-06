@@ -1,3 +1,4 @@
+/* Fundo chapado, como o do app: sem brilho radial nem grade decorativa. */
 gg-video {
   position: absolute;
   left: 0;
@@ -6,18 +7,5 @@ gg-video {
   height: 1350px;
   overflow: hidden;
   transform-origin: 0 0;
-  background:
-    radial-gradient(900px 600px at 85% -10%, rgba(91, 227, 125, 0.10), transparent 60%),
-    radial-gradient(800px 700px at -10% 110%, rgba(64, 120, 190, 0.16), transparent 60%),
-    var(--color-bg);
-}
-
-gg-video .grid-bg {
-  position: absolute;
-  inset: 0;
-  opacity: .35;
-  background-image:
-    linear-gradient(rgba(142, 163, 184, .06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(142, 163, 184, .06) 1px, transparent 1px);
-  background-size: 54px 54px;
+  background: var(--color-bg);
 }

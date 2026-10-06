@@ -19,17 +19,16 @@ gg-compare-scene .who {
   text-align: right;
 }
 
-gg-compare-scene .who.ideal { color: var(--color-accent); }
-gg-compare-scene .who.top { color: var(--color-content-muted); }
+/* Cada config com a cor que ela tem no comparador do app (CONFIG_THEME A/B). */
+gg-compare-scene .who.ideal { color: var(--color-config-a); }
+gg-compare-scene .who.top { color: var(--color-config-b); }
 
 gg-compare-scene .track {
   height: 28px;
-  border-radius: 8px;
 }
 
-gg-compare-scene .bar { border-radius: 8px; }
-gg-compare-scene .bar.ideal { background: var(--color-accent); }
-gg-compare-scene .bar.top { background: var(--color-content-muted); }
+gg-compare-scene .bar.ideal { background: var(--color-config-a); }
+gg-compare-scene .bar.top { background: var(--color-config-b); }
 
 gg-compare-scene .amount {
   font-size: 30px;
@@ -47,7 +46,7 @@ gg-compare-scene .price-diff {
 gg-compare-scene .price-diff b { color: var(--color-content); }
 
 gg-compare-scene .price-diff .ideal {
-  color: var(--color-accent);
+  color: var(--color-config-a);
   font-weight: 700;
 }
 
@@ -68,8 +67,8 @@ gg-compare-scene .delta {
 
 gg-compare-scene .chip-big {
   padding: 18px 28px;
-  border-radius: 22px;
-  background: var(--color-bg-subtle);
+  border-radius: var(--radius);
+  background: var(--color-surface);
   border: 1px solid var(--color-border);
   font-size: 44px;
   font-weight: 800;
@@ -78,8 +77,8 @@ gg-compare-scene .chip-big {
 
 gg-compare-scene .chip-big.fps {
   color: var(--color-accent);
-  border-color: rgba(91, 227, 125, .45);
-  background: var(--color-accent-subtle);
+  border-color: var(--color-accent-border);
+  background: var(--color-accent-bg);
 }
 
 gg-compare-scene .por {
@@ -98,7 +97,7 @@ gg-compare-scene .context {
 gg-compare-scene .context b { color: var(--color-content); }
 
 gg-compare-scene .context .accent {
-  color: var(--color-accent);
+  color: var(--color-config-a);
   font-weight: 700;
 }
 
@@ -109,4 +108,4 @@ gg-compare-scene .question {
   margin-top: 34px;
 }
 
-gg-compare-scene .question span { color: var(--color-accent); }
+gg-compare-scene .question span { color: var(--color-utility); }

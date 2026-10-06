@@ -5,14 +5,15 @@ gg-fps-scene .panel {
 gg-fps-scene .fps-row {
   position: relative;
   padding: 18px 20px 20px;
-  border-radius: var(--radius-md);
+  border-radius: var(--radius);
   margin-bottom: 12px;
   border: 2px solid transparent;
 }
 
+/* A resolução da tela do usuário: mesmo estado de selecionado do app. */
 gg-fps-scene .fps-row.selected {
-  border-color: rgba(91, 227, 125, .45);
-  background: var(--color-accent-subtle);
+  border-color: var(--color-utility-border);
+  background: var(--color-utility-bg);
 }
 
 gg-fps-scene .fps-top {
@@ -31,7 +32,7 @@ gg-fps-scene .fps-val {
 gg-fps-scene .fps-res small {
   font-size: 17px;
   font-weight: 700;
-  color: var(--color-accent);
+  color: var(--color-utility);
   margin-left: 10px;
   letter-spacing: .06em;
   text-transform: uppercase;
@@ -54,15 +55,15 @@ gg-fps-scene .range {
   position: absolute;
   top: 0;
   bottom: 0;
-  border-radius: 11px;
+  border-radius: var(--radius);
 }
 
-/* Tons das faixas de FPS */
-gg-fps-scene .tone-ok { --tone: var(--color-accent); --tone-from: #2FAE5B; --tone-range: rgba(91, 227, 125, .32); }
-gg-fps-scene .tone-good { --tone: var(--color-lime); --tone-from: #7FB84E; --tone-range: rgba(181, 224, 106, .32); }
-gg-fps-scene .tone-warn { --tone: var(--color-warning); --tone-from: #C98F2A; --tone-range: rgba(245, 185, 74, .32); }
+/* Tons das faixas de FPS: as mesmas cores de "Roda liso", "Roda bem" e "Jogável" do app. */
+gg-fps-scene .tone-ok { --tone: var(--color-accent); --tone-range: rgba(76, 175, 124, .35); }
+gg-fps-scene .tone-good { --tone: var(--color-success-soft); --tone-range: rgba(156, 192, 105, .35); }
+gg-fps-scene .tone-warn { --tone: var(--color-warning); --tone-range: rgba(251, 191, 36, .35); }
 
-gg-fps-scene .fps-row .bar { background: linear-gradient(90deg, var(--tone-from), var(--tone)); }
+gg-fps-scene .fps-row .bar { background: var(--tone); }
 gg-fps-scene .fps-row .range { background: var(--tone-range); }
 gg-fps-scene .fps-row .tag { color: var(--tone); }
 
@@ -92,12 +93,12 @@ gg-fps-scene .callout {
   gap: 16px;
   align-items: flex-start;
   padding: 22px 26px;
-  border-radius: var(--radius-md);
-  background: var(--color-bg-subtle);
+  border-radius: var(--radius);
+  background: var(--color-surface);
   border: 1px solid var(--color-border);
   font-size: 23px;
   line-height: 1.4;
-  color: var(--color-content-muted);
+  color: var(--color-content-mist);
 }
 
 gg-fps-scene .callout b {

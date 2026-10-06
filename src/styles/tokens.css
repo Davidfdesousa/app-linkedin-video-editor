@@ -1,23 +1,51 @@
+/*
+ * Paleta do GG Setup: os mesmos valores de app-building-pc/src/mocks/theme.ts
+ * (design system da Steam: navy escuro, aço azulado, verde dessaturado).
+ * Se a paleta do app mudar, este arquivo muda junto.
+ *
+ * Regra herdada do app: verde só em preço, recomendação e ação primária;
+ * o azul-aço marca seleção, etapa atual e destaques. Quando tudo é verde,
+ * nada é.
+ */
 :root {
-  --color-bg: #0F1924;
-  --color-bg-subtle: #16212E;
-  --color-bg-muted: #1B2838;
-  --color-bg-strong: #22334A;
-  --color-border: #2A3D55;
-  --color-content: #E8EEF4;
-  --color-content-muted: #8EA3B8;
-  --color-content-subtle: #5F7489;
-  --color-accent: #5BE37D;
-  --color-accent-muted: rgba(91, 227, 125, 0.14);
-  --color-accent-subtle: rgba(91, 227, 125, 0.07);
-  --color-pick: #1D3326;
-  --color-lime: #B5E06A;
-  --color-warning: #F5B94A;
-  --color-on-accent: #0B1A10;
-  --color-page: #05090D;
+  /* Fundos */
+  --color-page: #0A0D13;                         /* body do app, em volta do quadro */
+  --color-bg: #0F1924;                           /* BG: Deep Background Navy */
+  --color-surface: #1C2836;                      /* SURFACE: Store Panel Navy */
+  --color-bg-muted: rgba(255, 255, 255, 0.05);   /* COLOR.bg.muted: card dentro de painel */
 
-  --radius-md: 18px;
-  --radius-lg: 28px;
+  /* Bordas */
+  --color-border: rgba(255, 255, 255, 0.10);     /* COLOR.border.subtle */
+  --color-border-strong: #313943;                /* BORDER_LINE: Gunmetal Line */
+
+  /* Texto */
+  --color-content: #F1F5F9;                      /* COLOR.content.base */
+  --color-content-mist: #C6D4DF;                 /* TEXT_MIST */
+  --color-content-muted: #94A3B8;                /* COLOR.content.muted */
+  --color-content-subtle: #64748B;               /* COLOR.content.disabled */
+
+  /* Verde: preço, recomendação e CTA */
+  --color-accent: #4CAF7C;                       /* BRAND_GREEN */
+  --color-accent-bg: rgba(76, 175, 124, 0.12);   /* BRAND_GREEN_BG */
+  --color-accent-border: rgba(76, 175, 124, 0.35); /* BRAND_GREEN_BORDER */
+  --color-on-accent: #0F1924;                    /* COLOR.accent.content */
+  --color-logo: #4CAF7C;                         /* LOGO_GREEN: só o "GG" do wordmark */
+
+  /* Azul-aço: seleção, etapa atual e destaques */
+  --color-utility: #6E92A8;                      /* ACCENT_UTILITY */
+  --color-utility-bg: rgba(110, 146, 168, 0.08);
+  /* No app a borda de selecionado é 50%; no vídeo, que o LinkedIn exibe
+     a ~40% do tamanho, 50% some. Mesma cor, mais opaca. */
+  --color-utility-border: rgba(110, 146, 168, 0.85);
+  --color-config-a: #4C86AC;                     /* CONFIG_THEME.A: "Ideal pra você" */
+  --color-config-b: #93A0AC;                     /* CONFIG_THEME.B: "Tudo que dá" */
+
+  /* Faixas de FPS e avisos */
+  --color-success-soft: #9CC069;                 /* COLOR.success.soft: "Roda bem" */
+  --color-warning: #FBBF24;                      /* COLOR.warning.base: "Jogável" */
+
+  /* Cantos quase retos: o rounded-sm do app na escala do quadro de 1080px. */
+  --radius: 4px;
 
   --font: 'Inter', 'Inter Display', system-ui, sans-serif;
 }

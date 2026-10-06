@@ -2,7 +2,7 @@
 
 .tnum { font-feature-settings: 'tnum' 1; }
 .text-strong { color: var(--color-content); }
-.text-accent { color: var(--color-accent); }
+.text-accent { color: var(--color-utility); }
 
 .scene {
   position: absolute;
@@ -23,7 +23,7 @@
   letter-spacing: -0.03em;
 }
 
-.wordmark b { color: var(--color-accent); }
+.wordmark b { color: var(--color-logo); }
 
 /* Título das etapas */
 .step-title {
@@ -38,7 +38,7 @@
   font-weight: 700;
   letter-spacing: .14em;
   text-transform: uppercase;
-  color: var(--color-accent);
+  color: var(--color-utility);
   margin-bottom: 14px;
 }
 
@@ -67,11 +67,10 @@
   left: 64px;
   right: 64px;
   top: 410px;
-  background: var(--color-bg-subtle);
+  background: var(--color-surface);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius);
   padding: 36px;
-  box-shadow: 0 30px 80px rgba(0, 0, 0, .35);
 }
 
 .panel-label {
@@ -97,7 +96,7 @@
 .track {
   position: relative;
   height: 22px;
-  border-radius: 11px;
+  border-radius: var(--radius);
   background: var(--color-bg);
   overflow: hidden;
 }
@@ -107,10 +106,11 @@
   left: 0;
   top: 0;
   bottom: 0;
-  border-radius: 11px;
+  border-radius: var(--radius);
 }
 
-/* Seleção de cards (jogos e peças) — ver lib/pick.ts */
+/* Seleção de cards (jogos e peças), ver lib/pick.ts. Mesmo estado de
+   selecionado do app: fundo e borda em azul-aço, check quadrado preenchido. */
 .pick-tint,
 .pick-ring {
   position: absolute;
@@ -118,19 +118,19 @@
   opacity: 0;
 }
 
-.pick-tint { background: var(--color-pick); }
+.pick-tint { background: var(--color-utility-bg); }
 
 .pick-ring {
   border-radius: inherit;
-  border: 2px solid var(--color-accent);
+  border: 2px solid var(--color-utility-border);
 }
 
 .pick-check {
   position: absolute;
   top: 50%;
-  border-radius: 50%;
+  border-radius: var(--radius);
   display: grid;
   place-items: center;
-  background: var(--color-accent);
+  background: var(--color-utility);
   transform: scale(0);
 }
